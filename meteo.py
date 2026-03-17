@@ -4,19 +4,15 @@ from datetime import datetime
 import os
 import sys
 def get_config_path():
-    if getattr(sys, "frozen", False):
-        base_dir = os.path.expanduser("~")
-    else:
-        base_dir = os.path.abspath(".")
-
     if sys.platform == "win32":
-        folder = os.path.join(os.environ.get("APPDATA", base_dir), "warnW")
+        base = os.getenv("APPDATA")
     elif sys.platform == "darwin":
-        folder = os.path.join(base_dir, "Library", "Application Support", "warnW")
+        base = os.path.expanduser("~/library/Application Support")
     else:
-        folder = os.path.join(base_dir, ".config", "warnW")
-    os.makedirs(folder, exist_ok=True)
-    return os.path.join(folder, "config.json")
+        base = os.path.expanduser("~/.config")
+    app_dir = os.path.join(base, "warnW")
+    os.makedirs(app_dir, exist_ok=True)
+    return os.path.join(app_dir, "config.json")
 
 def gather2():
     cfg = get_config_path()
