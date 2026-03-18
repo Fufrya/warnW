@@ -6,5 +6,5 @@ The application can work in tray, the default notification timer is set to 30 mi
 
 Huge thanks to free API`s - NOAA swpc and open-meteo.
 
-Might have a lot of bugs, treat this as schlar`s first project
+Might have a lot of bugs, treat this as scholar`s first project
 AI - some lines may be inspired/suggested by AI, but I wrote everything myself, checking and doing it in my style - so most likely this has more slop than any AI can create <3
